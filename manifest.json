@@ -1,0 +1,17 @@
+{
+  "name": "QuickStack",
+  "version": "0.1",
+  "icons": { "48": "icon48.png",
+             "128": "icon128.png" },
+  "content_scripts": [ {
+        "all_frames": true,
+        "js": [ "jquery.min.js", "script.js" ],
+        "css": ["quickstack.css"],
+        "matches": [ "http://stackoverflow.com/*"] 
+  } ],
+  "manifest_version": 2,
+  "description": "Quick expand StackOverflow posts",
+  "permissions": [
+    "tabs", "http://www.stackoverflow.com/", "http://api.stackexchange.com/*"
+  ]
+}
