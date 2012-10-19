@@ -6,7 +6,7 @@ $('.summary > h3').each(function () {
     // Create a new question div who's class matches the summary
     // Append it after the summary and hide it
     var question = document.createElement('div');
-    $(question).addClass($(summary).attr("class")).css('background-color', '#B2FFFF').hide();
+    $(question).addClass($(summary).attr("class")).hide();
     $(summary).after($(question));
 
     // Create a button to expand and collapse the question body
