@@ -1,3 +1,16 @@
+/* Infinite scroll
+$('.page-sizer').hide();
+$('.pager').hide();
+
+$(window).scroll(function () { 
+   if ($(window).scrollTop() >= $(document).height() - $(window).height() - $('#footer').outerHeight(true)) {
+      // Check url to get correct sorting parameter
+      // Keep track of page variable
+      // Show loading animation
+   }
+});
+*/
+
 $('.summary > h3').each(function () {
     // Get the summary div and id of the question
     var summary = $(this).parent('.summary').parent();
