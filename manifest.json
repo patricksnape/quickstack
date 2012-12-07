@@ -1,24 +1,18 @@
 {
   "name": "QuickStack",
-  "version": "0.1",
+  "version": "0.2",
   "icons": { "48": "icon48.png",
              "128": "icon128.png" },
   "content_scripts": [ {
         "all_frames": true,
-        "js": [ "jquery.min.js", "jquery-ui.min.js", "script.js" ],
-        "css": ["quickstack.css", "jquery-ui.css"],
+        "js": [ "jquery.min.js", "script.js" ],
+        "css": ["quickstack.css"],
         "matches": [ "http://stackoverflow.com/*"] 
   } ],
+  "background": { "page": "background.html" },
   "manifest_version": 2,
-  "description": "Quick expand StackOverflow posts",
-  "web_accessible_resources": [ "images/ui-bg_glass_75_dadada_1x400.png",
-                                "images/ui-icons_454545_256x240.png",
-                                "images/ui-bg_flat_75_ffffff_40x100.png",
-                                "images/ui-icons_222222_256x240.png",
-                                "images/ui-bg_highlight-soft_75_cccccc_1x100.png",
-                                "images/ui-bg_flat_0_aaaaaa_40x100.png" 
-  ],                            
+  "description": "Quick expand StackOverflow posts",                            
   "permissions": [
-    "tabs", "http://www.stackoverflow.com/", "http://api.stackexchange.com/*"
+    "clipboardRead", "clipboardWrite"
   ]
 }

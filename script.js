@@ -34,32 +34,16 @@ $(document).ready(function() {
             );
             
             var dialogId = 'dialog-modal' + id + '-' + i;
-            var width = $(parent).width();
-            var height = $(parent).height();
             
             $('body').append(
-                    $('<div/>')
+                    $('<textarea/>')
                         .attr('type', 'hidden')
                         .attr('id', dialogId)
-                        .attr('title', 'Code Snippet')
-                        .css('width', width)
-                        .css('height', height)
-                        .append(
-                            $('<textarea/>')
-                                .css('width', width)
-                                .css('height', height)
-                                .text(data)
-                                .focus(function() { $(this).select() })
-                        )
+                        .text(data)
             );
             
             $(this).dblclick(function() {
-                $('#' + dialogId).dialog({
-                    height: height,
-                    width: width,
-                    modal: true,
-                    resizable: false
-                });
+				chrome.extension.sendMessage($('#' + dialogId).text());
             });
             
             i++;
