@@ -5,8 +5,8 @@
              "128": "icon128.png" },
   "content_scripts": [ {
         "all_frames": true,
-        "js": [ "jquery.min.js", "script.js" ],
-        "css": ["quickstack.css"],
+        "js": [ "jquery.min.js", "toastr.min.js", "script.js" ],
+        "css": ["quickstack.css", "toastr.min.css"],
         "matches": [ "http://stackoverflow.com/*"] 
   } ],
   "background": { "page": "background.html" },

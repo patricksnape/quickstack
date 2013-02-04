@@ -7,6 +7,13 @@ function toggleExpando(excerpt, full, expando) {
     $(full).slideToggle(500);
 }
 
+ var toastOptions = {
+    fadeIn: 400,
+    fadeOut: 400,
+    positionClass: 'toast-bottom-right',
+    timeOut: 1200
+};
+
 $(document).ready(function() {
 
     $('.summary > h3').each(function () {
@@ -52,7 +59,6 @@ $(document).ready(function() {
     $('code').each(function() {
         var that = $(this);
         var parent = $(this).closest('.answer');
-		console.log(parent);
         var id;
 
         // If code is in answer then find correct id
@@ -85,6 +91,7 @@ $(document).ready(function() {
             
             $(this).dblclick(function() {
 				chrome.extension.sendMessage($('#' + dialogId).text());
+				toastr.success('Copied', '', toastOptions);
             });
             
             i++;
